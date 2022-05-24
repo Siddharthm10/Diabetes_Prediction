@@ -14,14 +14,14 @@ def index(request):
 @csrf_exempt
 def diabetes_pre(request):
     template = loader.get_template('index.html')
-    pregnancies = request.POST.get("Pregnancies")
-    glucose = request.POST.get("Glucose")
-    bloodpressure = request.POST.get("BloodPressure")
-    skinthickness = request.POST.get("SkinThickness")
-    insulin = request.POST.get("Insulin")
-    BMI = request.POST.get("BMI")
-    DiabetesPedigreeFunction = request.POST.get("DiabetesPedigreeFunction")
-    age = request.POST.get("Age")
+    pregnancies = int(request.POST.get("Pregnancies"))
+    glucose = float(request.POST.get("Glucose"))
+    bloodpressure = float(request.POST.get("BloodPressure"))
+    skinthickness = float(request.POST.get("SkinThickness"))
+    insulin = float(request.POST.get("Insulin"))
+    BMI = float(request.POST.get("BMI"))
+    DiabetesPedigreeFunction = float(request.POST.get("DiabetesPedigreeFunction"))
+    age = int(request.POST.get("Age"))
 
     diabetes_data = [
         [pregnancies, glucose, bloodpressure, skinthickness, insulin, BMI, DiabetesPedigreeFunction, age]]
